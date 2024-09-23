@@ -1,0 +1,125 @@
+@font-face {
+   font-family: "GoogleSans Regular";
+   src: url("../assets/fonts/GoogleSans-Regular.ttf");
+}
+
+@font-face {
+   font-family: "GoogleSans Medium";
+   src: url("../assets/fonts/GoogleSans-Medium.ttf");
+}
+
+@font-face {
+   font-family: "GoogleSans Bold";
+   src: url("../assets/fonts/GoogleSans-Bold.ttf");
+}
+
+html, body, #wrapper {
+   margin: 0;
+   height: 100%;
+}
+
+body {
+   overflow: hidden;
+   user-select: none;
+   -webkit-user-select: none;
+}
+
+#wrapper {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: #141314;
+}
+
+#wrapper #cards {
+   width: 100%;
+   max-width: 1280px;
+   display: grid;
+   gap: 8px;
+   grid-template-areas:
+    ". about avatar ."
+    ". links avatar ."
+}
+
+#wrapper #cards #about {
+   grid-area: about;
+   padding: 46px 46px 30px 46px;
+   border-radius: 24px;
+   background: #1c1b1d;
+}
+
+#wrapper #cards #about .title {
+   font-family: "GoogleSans Bold", sans-serif;
+   font-size: 88px;
+   color: #ffffff;
+}
+
+#wrapper #cards #about .description {
+   font-family: "GoogleSans Regular", sans-serif;
+   font-size: 22px;
+   color: #ffffff;
+}
+
+#wrapper #cards #links {
+   grid-area: links;
+   display: flex;
+   justify-content: flex-start;
+   width: 100%;
+   height: 100%;
+   border-radius: 40px;
+   background: #1c1b1d;
+   text-align: center;
+   white-space: nowrap;
+   overflow: auto;
+}
+
+#wrapper #cards #links .button {
+   flex-grow: 1;
+   padding: 20px 24px;
+   font-family: "GoogleSans Medium", sans-serif;
+   font-size: 22px;
+   color: #cbc4cc;
+   text-decoration: none;
+   border-radius: 40px;
+}
+
+#wrapper #cards #links .button:hover {
+   color: #e2e0fb;
+   background: #45455a;
+}
+
+#wrapper #cards #avatar {
+   grid-area: avatar;
+   max-width: max-content;
+   aspect-ratio: 1;
+   background-image: url("../assets/images/avatar.jpg");
+   background-size: cover;
+   background-position: center;
+   border-radius: 24px;
+}
+
+@media screen and (max-width: 600px) {
+   #wrapper #cards {
+      grid-template-areas:
+         ". avatar ."
+         ". about ."
+         ". links ."
+   }
+
+   #wrapper #cards #about {
+      padding: 25px 25px 10px 25px;
+   }
+
+   #wrapper #cards #about .title {
+      font-size: 15vw;
+   }
+
+   #wrapper #cards #about .description,
+   #wrapper #cards #links .button {
+      font-size: 5vw;
+   }
+
+   #wrapper #cards #avatar {
+      max-width: unset;
+   }
+}
